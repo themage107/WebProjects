@@ -1,0 +1,31 @@
+<html>
+
+<head>
+
+<script>
+window.onload = function(){
+
+var geo = window.navigator.geolocation;
+var posOptions = {enableHighAccuracy: true};
+geo.getCurrentPosition(sayWhere, sayError, posOptions);
+
+function sayWhere(pos){
+	alert("Latitude: " + pos.coords.latitude);
+	alert("Longitude: " + pos.coords.longitude);
+	alert("Altitude: " + pos.coords.altitude);
+	alert("Heading: " + pos.coords.heading);
+	alert("Device Speed: " + pos.coords.speed);
+	alert("Accuracy: " + pos.coords.accuracy);
+	alert("Timestamp: " + pos.timestamp);
+}
+
+function sayError(err){
+	alert(err);
+}
+
+}
+</script>
+
+</head>
+
+</html>

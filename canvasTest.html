@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Canvas Testing</title>
+<style>
+
+#canvasSection {
+  border: 1px solid black;
+}
+</style>
+
+<script>
+// get the canvas and the context
+window.onload = function () {
+
+var canvas = document.getElementById('canvasSection');
+var ctx = canvas.getContext('2d');
+
+// Create a radial gradient
+// The inner circle is at x=110, y=90, with radius=30
+// The outer circle is at x=100, y=100, with radius=70
+var gradient = ctx.createRadialGradient(110,90,30, 100,100,70);
+
+// Add three color stops
+gradient.addColorStop(0, 'pink');
+gradient.addColorStop(.9, 'white');
+gradient.addColorStop(1, 'green');
+
+// Set the fill style and draw a rectangle
+ctx.fillStyle = gradient;
+ctx.fillRect(20, 20, 190, 160);
+
+}
+</script>
+
+
+</head>
+<body>
+<canvas width="600" height="600" id="canvasSection">
+</canvas>
+</body>
+</html>
