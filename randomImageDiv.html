@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+div {
+display: block;
+height: 5px;
+}
+
+div div {
+width: 5px;
+height: 5px;
+display: inline-block;
+}
+
+</style>
+
+</head>
+<body>
+<h1>test image</h1>
+</body>
+
+<script>
+
+// make a custom image out of DIVs
+let i = 0;
+while(i<128){
+  let container = document.createElement('div');
+  document.querySelector('body').append(container);
+
+  let ii = 0;
+  while(ii<128){
+    let div = document.createElement('div');
+    let r = Math.random() * 255;
+    let g = Math.random() * 255;
+    let b = Math.random() * 255;
+    div.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+    document.querySelector('body > div:last-of-type').append(div);
+    ii++;
+  }
+  i++;
+
+}
+</script>
+
+</html>
